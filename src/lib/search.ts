@@ -383,8 +383,14 @@ function scoreAyat(ayat: Ayat, keywords: string[]): number {
     return score;
 }
 
+
+export interface TieredSearchResults {
+    highlyRelevant: Ayat[];
+    allRelated: Ayat[];
+}
+
 /**
- * Check if a query matches an exact tag name (case-insensitive)
+ * Perform a keyword-based search across the Quran dataset.
  */
 function isTagName(query: string): string | null {
     const q = query.trim().toLowerCase();
@@ -394,18 +400,33 @@ function isTagName(query: string): string | null {
     return null;
 }
 
-export function searchAyats(query: string): Ayat[] {
-    if (!query || query.trim().length < 1) return [];
+export function searchAyats(query: string): TieredSearchResults {
+    if (!query || query.trim().length < 1) return { highlyRelevant: [], allRelated: [] };
 
     const normalizedQuery = query.trim().toLowerCase();
 
     // --- Special handling: if searching for an exact tag ---
     const exactTag = isTagName(normalizedQuery);
     if (exactTag) {
-        return getAyatsByTag(exactTag)
-            .map(ayat => ({ ayat, score: scoreAyat(ayat, [exactTag.toLowerCase()]) }))
-            .sort((a, b) => b.score - a.score)
-            .map(({ ayat }) => ayat);
+        const highlyRelevant = getAyatsByTag(exactTag);
+        const keywords = expandQuery(normalizedQuery);
+
+        // "All Related" for a tag search includes anything matching the tag name or synonyms via keyword
+        const allRelatedScored = quranData
+            .map(ayat => {
+                // If already in highlyRelevant, score is high
+                if (highlyRelevant.some(h => h.id === ayat.id)) return { ayat, score: 100 };
+
+                const score = scoreAyat(ayat, keywords);
+                return { ayat, score };
+            })
+            .filter(res => res.score > 0)
+            .sort((a, b) => b.score - a.score);
+
+        return {
+            highlyRelevant,
+            allRelated: allRelatedScored.map(res => res.ayat)
+        };
     }
 
     // --- General search: Split concepts and expand ---
@@ -435,7 +456,21 @@ export function searchAyats(query: string): Ayat[] {
         .filter(({ score }) => score > 0)
         .sort((a, b) => b.score - a.score);
 
-    return scored.map(({ ayat }) => ayat);
+    // Tier 1: Direct matches
+    const highlyRelevant = scored
+        .filter(res => {
+            const hasDirectTag = res.ayat.tags.some(t => {
+                const lowerT = t.toLowerCase();
+                return concepts.some(c => lowerT === c);
+            });
+            return hasDirectTag || res.score >= 15;
+        })
+        .map(res => res.ayat);
+
+    return {
+        highlyRelevant,
+        allRelated: scored.map(res => res.ayat)
+    };
 }
 
 export function getAyatsByTag(tag: string): Ayat[] {
@@ -453,5 +488,5 @@ export function getAllAyats(): Ayat[] {
  * Used for displaying accurate counts on topic cards.
  */
 export function getSearchResultCount(query: string): number {
-    return searchAyats(query).length;
+    return searchAyats(query).highlyRelevant.length;
 }

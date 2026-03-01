@@ -7,7 +7,7 @@ import { AyatCard } from "@/components/AyatCard";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
-import { searchAyats } from "@/lib/search";
+import { searchAyats, TieredSearchResults } from "@/lib/search";
 import { searchQuranFromApi } from "@/lib/api";
 import { Ayat, tags } from "@/data/quran-data";
 
@@ -58,24 +58,23 @@ function SearchResults() {
     const query = searchParams.get("q") || "";
     const router = useRouter();
 
-    const [allResults, setAllResults] = React.useState<Ayat[]>([]);
+    const [results, setResults] = React.useState<TieredSearchResults>({ highlyRelevant: [], allRelated: [] });
+    const [activeTab, setActiveTab] = React.useState<"highly" | "all">("highly");
     const [apiLoading, setApiLoading] = React.useState(false);
     const [initialLoad, setInitialLoad] = React.useState(false);
 
     React.useEffect(() => {
         if (!query) {
-            setAllResults([]);
+            setResults({ highlyRelevant: [], allRelated: [] });
             return;
         }
 
         // --- Layer 1: Instant local synonym-expanded search ---
-        const local = searchAyats(query);
-        setAllResults(local);
+        const tiered = searchAyats(query);
+        setResults(tiered);
         setInitialLoad(true);
 
-        // --- Layer 2: Live full-Quran API search ---
-        // Skip API search for exact tag names so the count matches
-        // the tag card count shown on the home page.
+        // --- Layer 2: Live full-Quran API search (Optional/Fallback) ---
         if (isExactTag(query)) {
             return;
         }
@@ -83,7 +82,10 @@ function SearchResults() {
         setApiLoading(true);
         searchQuranFromApi(query)
             .then((apiResults) => {
-                setAllResults((prev) => mergeResults(prev, apiResults));
+                setResults(prev => ({
+                    ...prev,
+                    allRelated: mergeResults(prev.allRelated, apiResults)
+                }));
             })
             .catch((err) => {
                 console.error("API search failed:", err);
@@ -99,7 +101,8 @@ function SearchResults() {
         }
     };
 
-    const totalResults = allResults.length;
+    const currentResults = activeTab === "highly" ? results.highlyRelevant : results.allRelated;
+    const totalCount = results.allRelated.length;
 
     return (
         <div className="search-page">
@@ -115,35 +118,68 @@ function SearchResults() {
                 </header>
 
                 <div className="results-summary">
-                    <h2>
-                        {!initialLoad
-                            ? "Searching..."
-                            : `${totalResults} result${totalResults !== 1 ? "s" : ""} for `}
-                        {initialLoad && (
-                            <span className="text-emerald">&quot;{query}&quot;</span>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "1rem" }}>
+                        <div>
+                            <h2>
+                                {!initialLoad
+                                    ? "Searching..."
+                                    : `${totalCount} result${totalCount !== 1 ? "s" : ""} for `}
+                                {initialLoad && (
+                                    <span className="text-emerald">&quot;{query}&quot;</span>
+                                )}
+                            </h2>
+                            <p className="text-slate-500">
+                                {apiLoading ? "Scanning full Quran..." : `Showing results for your quest.`}
+                            </p>
+                        </div>
+
+                        {initialLoad && totalCount > 0 && (
+                            <div className="tab-container" style={{
+                                display: "flex",
+                                background: "var(--slate-100, #f1f5f9)",
+                                padding: "0.25rem",
+                                borderRadius: "0.75rem",
+                                border: "1px solid var(--slate-200, #e2e8f0)"
+                            }}>
+                                <button
+                                    onClick={() => setActiveTab("highly")}
+                                    className={`tab-btn ${activeTab === "highly" ? "active" : ""}`}
+                                    style={{
+                                        padding: "0.5rem 1rem",
+                                        borderRadius: "0.5rem",
+                                        fontSize: "0.875rem",
+                                        fontWeight: 500,
+                                        transition: "all 0.2s",
+                                        background: activeTab === "highly" ? "white" : "transparent",
+                                        color: activeTab === "highly" ? "var(--slate-900, #0f172a)" : "var(--slate-500, #64748b)",
+                                        boxShadow: activeTab === "highly" ? "0 1px 3px rgba(0,0,0,0.1)" : "none",
+                                        border: "none",
+                                        cursor: "pointer"
+                                    }}
+                                >
+                                    Highly Relevant ({results.highlyRelevant.length})
+                                </button>
+                                <button
+                                    onClick={() => setActiveTab("all")}
+                                    className={`tab-btn ${activeTab === "all" ? "active" : ""}`}
+                                    style={{
+                                        padding: "0.5rem 1rem",
+                                        borderRadius: "0.5rem",
+                                        fontSize: "0.875rem",
+                                        fontWeight: 500,
+                                        transition: "all 0.2s",
+                                        background: activeTab === "all" ? "white" : "transparent",
+                                        color: activeTab === "all" ? "var(--slate-900, #0f172a)" : "var(--slate-500, #64748b)",
+                                        boxShadow: activeTab === "all" ? "0 1px 3px rgba(0,0,0,0.1)" : "none",
+                                        border: "none",
+                                        cursor: "pointer"
+                                    }}
+                                >
+                                    All Related ({results.allRelated.length})
+                                </button>
+                            </div>
                         )}
-                    </h2>
-                    {initialLoad && (
-                        <p className="text-slate-500" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                            {apiLoading ? (
-                                <>
-                                    <span
-                                        style={{
-                                            display: "inline-block",
-                                            width: "10px",
-                                            height: "10px",
-                                            borderRadius: "50%",
-                                            background: "var(--emerald-500, #10b981)",
-                                            animation: "pulse 1.2s infinite",
-                                        }}
-                                    />
-                                    Searching full Quran for more results…
-                                </>
-                            ) : (
-                                `Found ${totalResults} ayat${totalResults !== 1 ? "s" : ""} matching your search.`
-                            )}
-                        </p>
-                    )}
+                    </div>
                 </div>
 
                 <div className="results-grid">
@@ -151,17 +187,16 @@ function SearchResults() {
                         Array.from({ length: 3 }).map((_, i) => (
                             <SkeletonCard key={i} />
                         ))
-                    ) : allResults.length > 0 ? (
-                        allResults.map((ayat) => (
+                    ) : currentResults.length > 0 ? (
+                        currentResults.map((ayat) => (
                             <AyatCard key={ayat.id} ayat={ayat} />
                         ))
                     ) : (
                         <div className="no-results">
                             <p className="text-slate-400" style={{ fontSize: "1.25rem" }}>
-                                No ayats found matching &quot;{query}&quot;
-                            </p>
-                            <p className="text-slate-400" style={{ marginTop: "0.5rem" }}>
-                                Try different keywords — for example: &quot;patience&quot;, &quot;fear&quot;, &quot;forgiveness&quot;, &quot;wealth&quot;.
+                                {activeTab === "highly"
+                                    ? `No "Highly Relevant" ayats found. Try the "All Related" tab.`
+                                    : `No ayats found matching "${query}"`}
                             </p>
                         </div>
                     )}
