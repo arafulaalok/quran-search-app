@@ -12,6 +12,12 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    ".firebase/**",
+    "diagnose-tags.ts",
+    "test-nlp.ts",
+    "src/scripts/**",
+    "src/data/quran-data-full.json",
+    "src/scripts/*.js",
   ]),
 ]);
 
