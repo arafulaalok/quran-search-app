@@ -397,47 +397,40 @@ function isTagName(query: string): string | null {
 export function searchAyats(query: string): Ayat[] {
     if (!query || query.trim().length < 1) return [];
 
-    // --- Special handling: if the query is an exact tag name,
-    // return only ayats directly tagged with it, ranked by relevance ---
-    const exactTag = isTagName(query);
+    const normalizedQuery = query.trim().toLowerCase();
+
+    // --- Special handling: if searching for an exact tag ---
+    const exactTag = isTagName(normalizedQuery);
     if (exactTag) {
-        const taggedAyats = getAyatsByTag(exactTag);
-        // Score and sort by how relevant each ayat is
-        const keywords = [exactTag.toLowerCase()];
-        const scored = taggedAyats
-            .map((ayat) => ({ ayat, score: scoreAyat(ayat, keywords) }))
-            .sort((a, b) => b.score - a.score);
-        return scored.map(({ ayat }) => ayat);
+        return getAyatsByTag(exactTag)
+            .map(ayat => ({ ayat, score: scoreAyat(ayat, [exactTag.toLowerCase()]) }))
+            .sort((a, b) => b.score - a.score)
+            .map(({ ayat }) => ayat);
     }
 
-    // --- General search: synonym expansion + scoring ---
-    let concepts = [query.trim()];
-    if (query.includes('+') || query.includes(',')) {
-        concepts = query.split(/[+,]+/).map(q => q.trim()).filter(q => q.length > 0);
-    }
-
-    if (concepts.length === 0) return [];
-
-    // Expand search terms for each distinct concept
-    const expandedConcepts = concepts.map(c => expandQuery(c));
+    // --- General search: Split concepts and expand ---
+    const concepts = normalizedQuery.split(/[+,]+/).map(q => q.trim()).filter(q => q.length > 0);
+    const expandedKeywords = concepts.length > 0 ? concepts.flatMap(c => expandQuery(c)) : expandQuery(normalizedQuery);
 
     const scored = quranData
         .map((ayat) => {
-            let matchesAll = true;
-            let totalScore = 0;
+            const score = scoreAyat(ayat, expandedKeywords);
 
-            // Enforce AND intersection for stacked concepts
-            for (const expandedKeywords of expandedConcepts) {
-                const score = scoreAyat(ayat, expandedKeywords);
-                if (score === 0) {
-                    matchesAll = false;
-                    break;
+            // Boost score if it matches multiple distinct concepts (if multiple were provided)
+            let conceptMatchCount = 0;
+            if (concepts.length > 1) {
+                for (const concept of concepts) {
+                    const conceptKeywords = expandQuery(concept);
+                    if (scoreAyat(ayat, conceptKeywords) > 0) {
+                        conceptMatchCount++;
+                    }
                 }
-                totalScore += score;
             }
 
-            if (!matchesAll) return { ayat, score: 0 };
-            return { ayat, score: totalScore };
+            // Weighting: verses matching ALL concepts get a massive boost
+            const finalScore = score * (conceptMatchCount === concepts.length && concepts.length > 1 ? 5 : 1);
+
+            return { ayat, score: finalScore };
         })
         .filter(({ score }) => score > 0)
         .sort((a, b) => b.score - a.score);
