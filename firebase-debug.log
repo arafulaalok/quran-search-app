@@ -1,0 +1,23 @@
+[debug] [2026-03-01T10:54:40.085Z] ----------------------------------------------------------------------
+[debug] [2026-03-01T10:54:40.087Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Aalok\AppData\Local\npm-cache\_npx\7750544ccf494d8b\node_modules\firebase-tools\lib\bin\firebase.js init hosting:github
+[debug] [2026-03-01T10:54:40.087Z] CLI Version:   15.8.0
+[debug] [2026-03-01T10:54:40.087Z] Platform:      win32
+[debug] [2026-03-01T10:54:40.087Z] Node Version:  v24.11.1
+[debug] [2026-03-01T10:54:40.087Z] Time:          Sun Mar 01 2026 16:54:40 GMT+0600 (Bangladesh Standard Time)
+[debug] [2026-03-01T10:54:40.087Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Aalok\.gemini\antigravity\scratch\quran-search-app
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+

@@ -1,0 +1,178 @@
+﻿=== TAG RELEVANCE DIAGNOSTIC REPORT ===
+
+--- Tags with ZERO directly-tagged ayats ---
+  Γ¥î "Fear" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Failure" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Enemies" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Hypocrisy" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Hellfire" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Day of Judgement" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Animals" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Water" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Clothing" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Interest (Riba)" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Betrayal" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Loneliness" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Pardon" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Purpose" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Loss" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Zina" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Backbiting" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Boundaries" ΓåÆ 0 ayats directly tagged
+  Γ¥î "Weather" ΓåÆ 0 ayats directly tagged
+
+Total tags with no direct ayats: 19 / 99
+
+--- Search results per tag (via searchAyats) ---
+  "Fear": 11 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [fear, anxiety, afraid, scared, dread]
+    Top results (check relevance):
+      65:2-3: And whoever fears Allah - He will make for him a way out And will provide for hi... tags: [Hope, Provision, Trust, Anxiety, Future, Money, Success]
+      2:286: Allah does not burden a soul beyond that it can bear.... tags: [Hardship, Anxiety, Tests, Mercy, Life]
+      94:5: For indeed, with hardship [will be] ease.... tags: [Hardship, Hope, Patience, Anxiety, Depression, Life]
+
+  "Failure": 9 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [failure, hardship, patience]
+    Top results (check relevance):
+      2:153: O you who have believed, seek help through patience and prayer. Indeed, Allah is... tags: [Patience, Prayer, Hope, Hardship, Tests]
+      94:5: For indeed, with hardship [will be] ease.... tags: [Hardship, Hope, Patience, Anxiety, Depression, Life]
+      94:6: Indeed, with hardship [will be] ease.... tags: [Hardship, Hope, Patience, Anxiety, Depression]
+
+  "Enemies": 20 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [enemies, patience, forgiveness]
+    Top results (check relevance):
+      3:134: Who spend [in the cause of Allah] during ease and hardship and who restrain ange... tags: [Anger, Charity, Forgiveness, Kindness, Patience]
+      2:153: O you who have believed, seek help through patience and prayer. Indeed, Allah is... tags: [Patience, Prayer, Hope, Hardship, Tests]
+      94:5: For indeed, with hardship [will be] ease.... tags: [Hardship, Hope, Patience, Anxiety, Depression, Life]
+
+  "Hypocrisy": 0 search results, 0 directly tagged ≡ƒö┤ NO RESULTS AT ALL
+    expanded keywords: [hypocrisy]
+
+  "Hellfire": 7 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [hellfire]
+    Top results (check relevance):
+      39:53: Say, 'O My servants who have transgressed against themselves [by sinning], do no... tags: [Mercy, Forgiveness, Sin, Hope, Depression, Repentance]
+      2:186: And when My servants ask you, [O Muhammad], concerning Me - indeed I am near. I ... tags: [Prayer, Hope, Guidance, Closeness to Allah]
+      65:2-3: And whoever fears Allah - He will make for him a way out And will provide for hi... tags: [Hope, Provision, Trust, Anxiety, Future, Money, Success]
+
+  "Day of Judgement": 24 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [day, of, judgement, day of judgement, hereafter, jannah, hellfire]
+    Top results (check relevance):
+      29:64: And this worldly life is not but diversion and amusement. And indeed, the home o... tags: [Life, Death, Hereafter, Jannah, Wisdom]
+      39:53: Say, 'O My servants who have transgressed against themselves [by sinning], do no... tags: [Mercy, Forgiveness, Sin, Hope, Depression, Repentance]
+      2:186: And when My servants ask you, [O Muhammad], concerning Me - indeed I am near. I ... tags: [Prayer, Hope, Guidance, Closeness to Allah]
+
+  "Animals": 10 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [animals, creation, nature]
+    Top results (check relevance):
+      67:15: It is He who made the earth tame for you - so walk among its slopes and eat of H... tags: [Travel, Nature, Creation, Provision, Food, Future]
+      95:4: We have certainly created man in the best of stature;... tags: [Self-Worth, Creation, Gratitude]
+      2:286: Allah does not burden a soul beyond that it can bear.... tags: [Hardship, Anxiety, Tests, Mercy, Life]
+
+  "Water": 2 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [water, creation, nature]
+    Top results (check relevance):
+      67:15: It is He who made the earth tame for you - so walk among its slopes and eat of H... tags: [Travel, Nature, Creation, Provision, Food, Future]
+      95:4: We have certainly created man in the best of stature;... tags: [Self-Worth, Creation, Gratitude]
+
+  "Clothing": 8 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [clothing, provision, gratitude]
+    Top results (check relevance):
+      14:7: And [remember] when your Lord proclaimed, 'If you are grateful, I will surely in... tags: [Gratitude, Success, Provision, Blessings]
+      4:32: And do not wish for that by which Allah has made some of you exceed others. For ... tags: [Jealousy, Provision, Patience, Gratitude, Focus]
+      2:172: O you who have believed, eat from the good things which We have provided for you... tags: [Food, Provision, Gratitude, Prayer]
+
+  "Interest (Riba)": 12 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [interest, (riba), riba, business, money, interest (riba)]
+    Top results (check relevance):
+      2:261: The example of those who spend their wealth in the way of Allah is like a seed [... tags: [Charity, Money, Provision, Business, Success]
+      2:280: And if someone is in hardship, then [let there be] postponement until [a time of... tags: [Debt, Money, Hardship, Charity, Kindness, Business]
+      65:2-3: And whoever fears Allah - He will make for him a way out And will provide for hi... tags: [Hope, Provision, Trust, Anxiety, Future, Money, Success]
+
+  "Betrayal": 25 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [betrayal, heartbreak, forgiveness, patience, trust]
+    Top results (check relevance):
+      2:216: But perhaps you hate a thing and it is good for you; and perhaps you love a thin... tags: [Trust, Destiny, Patience, Wisdom, Future]
+      3:134: Who spend [in the cause of Allah] during ease and hardship and who restrain ange... tags: [Anger, Charity, Forgiveness, Kindness, Patience]
+      2:153: O you who have believed, seek help through patience and prayer. Indeed, Allah is... tags: [Patience, Prayer, Hope, Hardship, Tests]
+
+  "Loneliness": 2 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [loneliness, closeness to allah, remembrance]
+    Top results (check relevance):
+      13:28: Those who have believed and whose hearts are assured by the remembrance of Allah... tags: [Anxiety, Peace, Depression, Prayer, Remembrance]
+      2:186: And when My servants ask you, [O Muhammad], concerning Me - indeed I am near. I ... tags: [Prayer, Hope, Guidance, Closeness to Allah]
+
+  "Pardon": 1 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [pardon]
+    Top results (check relevance):
+      3:134: Who spend [in the cause of Allah] during ease and hardship and who restrain ange... tags: [Anger, Charity, Forgiveness, Kindness, Patience]
+
+  "Purpose": 0 search results, 0 directly tagged ≡ƒö┤ NO RESULTS AT ALL
+    expanded keywords: [purpose]
+
+  "Loss": 11 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [loss, hardship, patience, death, tests, grief]
+    Top results (check relevance):
+      2:153: O you who have believed, seek help through patience and prayer. Indeed, Allah is... tags: [Patience, Prayer, Hope, Hardship, Tests]
+      94:5: For indeed, with hardship [will be] ease.... tags: [Hardship, Hope, Patience, Anxiety, Depression, Life]
+      94:6: Indeed, with hardship [will be] ease.... tags: [Hardship, Hope, Patience, Anxiety, Depression]
+
+  "Zina": 10 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [zina, purity, modesty, lust, temptation, desires (nafs), sin]
+    Top results (check relevance):
+      24:30: Tell the believing men to reduce [some] of their vision and guard their private ... tags: [Purity, Modesty, Intimacy, Temptation, Desires (Nafs), Lust]
+      12:53: And I do not acquit myself. Indeed, the soul is a persistent enjoiner of evil, e... tags: [Desires (Nafs), Temptation, Sin, Mercy, Forgiveness, Addiction, Lust]
+      4:28: And Allah wants to lighten for you [your difficulties]; and mankind was created ... tags: [Weakness, Addiction, Temptation, Sin, Mercy, Healing]
+
+  "Backbiting": 12 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [backbiting, sin, speech, honesty]
+    Top results (check relevance):
+      49:12: O you who have believed, avoid much [negative] assumption. Indeed, some assumpti... tags: [Sin, Speech, Friends, Honesty, Social]
+      24:15: When you received it with your tongues and said with your mouths that of which y... tags: [Rumors, Speech, Sin, Social, Vanity, Honesty]
+      39:53: Say, 'O My servants who have transgressed against themselves [by sinning], do no... tags: [Mercy, Forgiveness, Sin, Hope, Depression, Repentance]
+
+  "Boundaries": 1 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [boundaries, limits, laws, hudud, protection]
+    Top results (check relevance):
+      78:9-11: And made your sleep [a means for] rest, And made the night as clothing, And made... tags: [Sleep, Peace, Provision, Duty, Exhaustion, Health, Time, Protection]
+
+  "Weather": 5 search results, 0 directly tagged ΓÜá∩╕Å  NO DIRECT TAG - results via synonyms only
+    expanded keywords: [weather, nature, creation, water, time]
+    Top results (check relevance):
+      67:15: It is He who made the earth tame for you - so walk among its slopes and eat of H... tags: [Travel, Nature, Creation, Provision, Food, Future]
+      95:4: We have certainly created man in the best of stature;... tags: [Self-Worth, Creation, Gratitude]
+      78:9-11: And made your sleep [a means for] rest, And made the night as clothing, And made... tags: [Sleep, Peace, Provision, Duty, Exhaustion, Health, Time, Protection]
+
+
+--- Synonym expansion issues for tag names ---
+  "Death" expands to 5 terms: [death, hereafter, life, jannah, day of judgement]
+  "Hope" expands to 5 terms: [hope, patience, mercy, trust, hopeful]
+  "Tests" expands to 6 terms: [tests, knowledge, hardship, patience, success, test]
+  "Closeness to Allah" expands to 9 terms: [closeness, to, allah, friends, enemies, patience, boundaries, abuse, toxic]
+  "Faith" expands to 5 terms: [faith, belief, guidance, trust, prayer]
+  "Fear" expands to 5 terms: [fear, anxiety, afraid, scared, dread]
+  "Marriage" expands to 5 terms: [marriage, spouse, love, mercy, family]
+  "Love" expands to 5 terms: [love, mercy, marriage, affection, kindness]
+  "Health" expands to 5 terms: [health, sickness, healing, trust, heal]
+  "Travel" expands to 7 terms: [travel, provision, trust, protection, duty, nature, traveling]
+  "Sleep" expands to 7 terms: [sleep, peace, trust, healing, exhaustion, time, sleepy]
+  "Friends" expands to 6 terms: [friends, kindness, speech, enemies, love, friendship]
+  "Day of Judgement" expands to 7 terms: [day, of, judgement, day of judgement, hereafter, jannah, hellfire]
+  "Money" expands to 5 terms: [money, wealth, provision, charity, business]
+  "Interest (Riba)" expands to 6 terms: [interest, (riba), riba, business, money, interest (riba)]
+  "Honesty" expands to 5 terms: [honesty, justice, speech, duty, honest]
+  "Intimacy" expands to 6 terms: [intimacy, marriage, spouse, love, purity, modesty]
+  "Desires (Nafs)" expands to 6 terms: [desires, (nafs), desires (nafs), temptation, lust, desire]
+  "Addiction" expands to 5 terms: [addiction, desires (nafs), temptation, healing, weakness]
+  "Heartbreak" expands to 5 terms: [heartbreak, grief, sadness, patience, healing]
+  "Betrayal" expands to 5 terms: [betrayal, heartbreak, forgiveness, patience, trust]
+  "Healing" expands to 6 terms: [healing, sickness, health, trust, cure, heal]
+  "Lust" expands to 6 terms: [lust, temptation, desires (nafs), purity, intimacy, modesty]
+  "Trauma" expands to 5 terms: [trauma, healing, hardship, patience, mercy]
+  "Overthinking" expands to 5 terms: [overthinking, anxiety, peace, trust, future]
+  "Doubt" expands to 5 terms: [doubt, faith, guidance, overthinking, knowledge]
+  "Exhaustion" expands to 5 terms: [exhaustion, weakness, hardship, patience, sleep]
+  "Loss" expands to 6 terms: [loss, hardship, patience, death, tests, grief]
+  "Zina" expands to 7 terms: [zina, purity, modesty, lust, temptation, desires (nafs), sin]
+  "Boundaries" expands to 5 terms: [boundaries, limits, laws, hudud, protection]
+  "Weather" expands to 5 terms: [weather, nature, creation, water, time]
