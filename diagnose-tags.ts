@@ -32,7 +32,7 @@ for (const tag of tags) {
 
     // Flag if search returns results but none are directly tagged
     const hasDirectTag = directlyTagged.length > 0;
-    const hasSearchResults = results.length > 0;
+    const hasSearchResults = results.allRelated.length > 0;
 
     if (!hasDirectTag || !hasSearchResults) {
         const flag = !hasDirectTag && hasSearchResults
@@ -40,12 +40,12 @@ for (const tag of tags) {
             : !hasSearchResults
                 ? "🔴 NO RESULTS AT ALL"
                 : "";
-        console.log(`  "${tag}": ${results.length} search results, ${directlyTagged.length} directly tagged ${flag}`);
+        console.log(`  "${tag}": ${results.allRelated.length} search results, ${directlyTagged.length} directly tagged ${flag}`);
         console.log(`    expanded keywords: [${expanded.slice(0, 10).join(", ")}${expanded.length > 10 ? '...' : ''}]`);
         if (hasSearchResults && !hasDirectTag) {
             // Show first 3 results to check relevance
             console.log(`    Top results (check relevance):`);
-            for (const r of results.slice(0, 3)) {
+            for (const r of results.allRelated.slice(0, 3)) {
                 console.log(`      ${r.id}: ${r.translation.substring(0, 80)}... tags: [${r.tags.join(", ")}]`);
             }
         }
