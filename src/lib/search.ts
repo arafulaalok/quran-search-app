@@ -487,6 +487,39 @@ export function getAllAyats(): Ayat[] {
  * Returns the exact number of results a query would return.
  * Used for displaying accurate counts on topic cards.
  */
+const tagCountCache = new Map<string, number>();
+let countsPrecomputed = false;
+
+function precomputeTagCounts() {
+    if (countsPrecomputed) return;
+
+    // Initialize cache with 0 for all known tags
+    for (const tag of tags) {
+        tagCountCache.set(tag.toLowerCase(), 0);
+    }
+
+    // Single pass over Quran data to count all exact tags (Highly Relevant count)
+    // This entirely removes the lag from computing counts in a loop for 100+ tags.
+    for (const ayat of quranData) {
+        for (const t of ayat.tags) {
+            const lowerT = t.toLowerCase();
+            if (tagCountCache.has(lowerT)) {
+                tagCountCache.set(lowerT, tagCountCache.get(lowerT)! + 1);
+            }
+        }
+    }
+
+    countsPrecomputed = true;
+}
+
 export function getSearchResultCount(query: string): number {
+    const normalized = query.trim().toLowerCase();
+    const exactTag = isTagName(normalized);
+
+    if (exactTag) {
+        precomputeTagCounts();
+        return tagCountCache.get(exactTag.toLowerCase()) || 0;
+    }
+
     return searchAyats(query).highlyRelevant.length;
 }
